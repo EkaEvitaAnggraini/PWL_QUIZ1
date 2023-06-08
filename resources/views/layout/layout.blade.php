@@ -113,7 +113,6 @@
         </div>
 
         <section>
-
             @yield('isi')
         </section>
 
