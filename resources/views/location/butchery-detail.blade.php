@@ -1,5 +1,7 @@
 @extends('layout.layout')
 
+@extends('layout.search')
+@section('title','Nearest Butchery Location')
 @section('isi')
 
     <div data-aos="fade-up">
