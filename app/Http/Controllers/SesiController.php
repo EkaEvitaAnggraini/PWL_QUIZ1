@@ -57,7 +57,25 @@ class SesiController extends Controller
     // }
 
     public function login(Request $request)
-    {
+    {   
+        
+        $input = $request->all();
+      
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+      
+        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
+        {
+            if (auth()->user()->type == '2') {
+                return redirect()->route('admin.dashboard.index');
+            }else if (auth()->user()->type == '1') {
+                return redirect()->route('transaction.index');
+            }else if (auth()->user()->type == '0'){
+                return redirect()->route('suppliers.index');
+            }
+        }
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
@@ -76,6 +94,7 @@ class SesiController extends Controller
             }
 
             return redirect()->route('dashboard');
+            
         }
 
         // Authentication failed
@@ -111,7 +130,7 @@ class SesiController extends Controller
 
     function register()
     {
-    return view('auth/register');
+        return view('auth/register');
     }
 
     protected function create(Request $r, array $data)

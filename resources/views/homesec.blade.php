@@ -51,7 +51,7 @@
     <br><br><br>
 
     <section style="height:100%">
-    <div class="gradient-custom h-100" style="">
+    <div class="gradient-custom h-100">
         <div class="mask d-flex align-items-center h-100">
           <div class="container">
             <div class="row justify-content-center">

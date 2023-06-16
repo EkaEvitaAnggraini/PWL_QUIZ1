@@ -1,4 +1,4 @@
-@extends('layouts.app')
+3@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -67,7 +67,9 @@
                                 <option value="2">Buyer</option>
                                 <option value="1">Supplier</option>
                             </select>
-                        </div><br><br>
+                        </div>
+                        
+                        <br><br>
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

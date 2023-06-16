@@ -53,7 +53,7 @@
                         <div class="rating-stars">
                             @for($i = 1; $i <= 5; $i++)
                                 <input type="radio" name="rating" value="{{ $i }}" id="rating{{ $i }}" style="display: none;">
-                                <label for="rating{{ $i }}"><i class="far fa-star" onclick="handleRatingClick({{ $i }})"></i></label>
+                                <label for="rating{{ $i }}"><i class="far fa-star" onclick="handleRatingClick({{ $i })"></i></label>
                             @endfor
                         </div>
                     </div>

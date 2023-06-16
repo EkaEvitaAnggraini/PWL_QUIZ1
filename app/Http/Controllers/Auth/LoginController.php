@@ -41,6 +41,23 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    // public function login(Request $request) {
+    // $input = $request->all();
+      
+    //     $this->validate($request, [
+    //         'email' => 'required|email',
+    //         'password' => 'required',
+    //     ]);
+      
+    //     if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
+    //     {
+    //         if (auth()->user()->role == 2) {
+    //             return redirect()->route('admin.dashboard.index');
+    //         }else if (auth()->user()->role == 0) {
+    //             return redirect()->route('transaction.index');
+    //         }else if (auth()->user()->role == 1){
+    //             return redirect()->route('home');
+    //             {}
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
